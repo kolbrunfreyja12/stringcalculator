@@ -6,8 +6,8 @@ import org.junit.Test;
 public class CalculatorTest {
 
 	public static void main(String args[]) {
-      org.junit.runner.JUnitCore.main("is.ru.stringcalculator.CalculatorTest");
-    }
+      	org.junit.runner.JUnitCore.main("is.ru.stringcalculator.Calculator");
+    	}
 
 	@Test
 	public void testEmptyString() {
@@ -30,6 +30,6 @@ public class CalculatorTest {
 	
 	@Test
 	public void testnewline(){
-		assertEquals(6, Calculator.add("\n2,3");
+		assertEquals(6, Calculator.add("1\n2,3"));
 	}
 }
