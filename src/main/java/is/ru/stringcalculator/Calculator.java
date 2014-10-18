@@ -6,27 +6,29 @@ public class Calculator {
 		if(text.equals("")){
 			return 0;
 		}
-		else if(text.contains(",") || text.contains("\n")){
-			return sum(splitNumbers(text));
-		}
-		else
-			return 1;
+		else{
+		
+		return splitta(text);
+	}
+	}
+	private static int splitta(String text){
+		String[] input;
+		String a = text;
+		if(a.contains("//")){
+			String breyta = Character.toString(a.charAt(2));
+			a = a.replace(breyta , ",").trim();
+			a = a.replace("/", ",").trim();
+                        a = a.replace(",", " ").trim();
+                        a = a.replace(" ", ",").trim();
 	} 
+	a = a.replace("\n",",");
+	input = a.split(",");
 
-	private static int toInt(String number){
-		return Integer.parseInt(number);
+	int sum = 0;
+	for(int i = 0; i < input.length; i++){
+		sum += Integer.parseInt(input[i].trim());
 	}
-
-	private static String[] splitNumbers(String numbers){
-		numbers = numbers.replace("\n", ",");
-		return numbers.split(",");
+	return sum;
+		
 	}
-     
-    private static int sum(String[] numbers){
-    	int total = 0;
-		for(String number : numbers){
-			total += toInt(number);
-		}
-		return total;
-    }
-}
+	} 
